@@ -1,0 +1,112 @@
+{
+  "name": "cortico-world-sound-del",
+  "version": "0.1.4",
+  "type": "module",
+  "description": "Mute Windows playback from Coopanion's existing push-to-talk shortcut and restore it afterward. Requires the built-in desktop-pet voice module.",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "os": [
+    "win32"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "engines": {
+    "node": ">=22.12"
+  },
+  "keywords": [
+    "cortico-world",
+    "cortico",
+    "coopanion",
+    "audio",
+    "windows"
+  ],
+  "cortico": {
+    "kind": "world",
+    "api": 6,
+    "displayName": "Sound Del",
+    "describe": "describe.json",
+    "locales": {
+      "zh": {
+        "displayName": "收音静音",
+        "description": "按下 Coopanion 原收音快捷键时静音播放设备，收音结束后恢复。\n\n- 不修改主程序、不更换快捷键、不模拟按键。\n- 保留原有静音状态与手动覆盖，异常时保留恢复记录。\n- Windows x64；依赖内置 desktop-pet 语音模块的本机状态接口。\n\n第三方扩展。静音覆盖所有活动播放设备，包括 Coopanion 自己的声音；不是麦克风降噪。已在作者的环境试用，不保证所有驱动和高负载下零延迟。"
+      },
+      "en": {
+        "displayName": "Sound Del",
+        "description": "Mute playback from Coopanion's existing push-to-talk shortcut and restore it when recording ends.\n\n- No host patch, shortcut remapping or injected input.\n- Preserve existing mute and detected manual overrides; retain recovery records on failure.\n- Windows x64; requires the built-in desktop-pet voice module's local state interface.\n\nThird-party extension. Mutes all active playback endpoints, including Coopanion itself; not microphone noise cancellation. Manually tried on the author's setup, not a zero-latency guarantee across drivers and system loads."
+      }
+    },
+    "icon": "assets/icon.svg",
+    "tags": [
+      "voice",
+      "requires-extension",
+      "experimental"
+    ]
+  },
+  "files": [
+    "dist",
+    "bin",
+    "assets",
+    "src",
+    "native/src",
+    "native/Cargo.toml",
+    "native/Cargo.lock",
+    "scripts",
+    "tests",
+    "tsconfig.json",
+    "tsconfig.build.json",
+    "rust-toolchain.toml",
+    "README.md",
+    "README_zh.md",
+    "CHANGELOG.md",
+    "VALIDATION.md",
+    "PUBLISHING.md",
+    "SECURITY.md",
+    "THIRD_PARTY_NOTICES.md",
+    "LICENSE",
+    "describe.json"
+  ],
+  "scripts": {
+    "build": "npm run build:native && npm run build:ts",
+    "build:native": "node scripts/build-native.mjs",
+    "build:ts": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "npm run test:ts && npm run test:native && npm run test:integration",
+    "test:ts": "tsx --test tests/*.test.ts",
+    "test:native": "node scripts/rust.mjs test --locked --manifest-path native/Cargo.toml",
+    "pretest:integration": "npm run build",
+    "test:integration": "tsx --test tests/integration/*.test.ts",
+    "check": "npm run typecheck && npm test && npm run check:extension && npm run verify:package",
+    "probe": "node scripts/helper-cli.mjs --probe",
+    "recover": "node scripts/helper-cli.mjs --recover-only",
+    "check:extension": "node --import tsx scripts/check-extension.mjs",
+    "verify:package": "node scripts/check-package.mjs"
+  },
+  "dependencies": {
+    "ws": "8.22.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.19.0",
+    "@types/ws": "8.18.1",
+    "cortico": "0.2.10",
+    "tsx": "4.20.6",
+    "typescript": "5.9.3"
+  },
+  "author": {
+    "name": "sy0u1ti",
+    "url": "https://github.com/sy0u1ti"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sy0u1ti/cortico-world-sound-del.git"
+  },
+  "homepage": "https://github.com/sy0u1ti/cortico-world-sound-del#readme",
+  "bugs": {
+    "url": "https://github.com/sy0u1ti/cortico-world-sound-del/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}
