@@ -1,8 +1,8 @@
 {
   "name": "cortico-world-sound-del",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "type": "module",
-  "description": "Mute Windows playback from Coopanion's existing push-to-talk shortcut and restore it afterward. Requires the built-in desktop-pet voice module.",
+  "description": "Give Coopanion mute-while-speaking like WeChat Input and 网易兔八哥: automatically mute background playback during voice recording, then restore it. Windows x64; requires the built-in voice module.",
   "license": "MIT",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -30,11 +30,11 @@
     "locales": {
       "zh": {
         "displayName": "收音静音",
-        "description": "按下 Coopanion 原收音快捷键时静音播放设备，收音结束后恢复。\n\n- 不修改主程序、不更换快捷键、不模拟按键。\n- 保留原有静音状态与手动覆盖，异常时保留恢复记录。\n- Windows x64；依赖内置 desktop-pet 语音模块的本机状态接口。\n\n第三方扩展。静音覆盖所有活动播放设备，包括 Coopanion 自己的声音；不是麦克风降噪。已在作者的环境试用，不保证所有驱动和高负载下零延迟。"
+        "description": "为 Coopanion 加上类似微信输入法、网易兔八哥的收音静音体验：按下原收音快捷键，后台播放自动静音，结束后恢复，不用手动暂停音乐或视频。无需修改主程序；适用于 Windows x64，依赖内置语音模块。"
       },
       "en": {
         "displayName": "Sound Del",
-        "description": "Mute playback from Coopanion's existing push-to-talk shortcut and restore it when recording ends.\n\n- No host patch, shortcut remapping or injected input.\n- Preserve existing mute and detected manual overrides; retain recovery records on failure.\n- Windows x64; requires the built-in desktop-pet voice module's local state interface.\n\nThird-party extension. Mutes all active playback endpoints, including Coopanion itself; not microphone noise cancellation. Manually tried on the author's setup, not a zero-latency guarantee across drivers and system loads."
+        "description": "Brings mute-while-speaking, familiar from tools such as WeChat Input (微信输入法) and 网易兔八哥, to Coopanion. Keeps your recording shortcut and restores playback afterward. Windows x64; requires the built-in voice module."
       }
     },
     "icon": "assets/icon.svg",
@@ -59,6 +59,7 @@
     "rust-toolchain.toml",
     "README.md",
     "README_zh.md",
+    "USAGE.md",
     "CHANGELOG.md",
     "VALIDATION.md",
     "PUBLISHING.md",

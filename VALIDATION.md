@@ -1,6 +1,15 @@
 # Validation
 
-Version: 0.1.4. Date: 2026-10-30.
+Runtime baseline: 0.1.4. Date: 2026-10-30.
+
+Version 0.1.5 updates documentation, package descriptions and version metadata;
+the TypeScript and Rust runtime sources are unchanged. The baseline evidence
+below is retained rather than presented as a new hardware trial.
+
+The 0.1.5 build passed 55 Rust tests, 71 TypeScript/contract/process tests,
+typecheck, Clippy and the same upstream extension checker again before
+publication. Its rebuilt helper SHA-256 is
+`4ffe5f30316a3acb4e33096ac31d18c22b4bca9c161480ccf1aa3ca25d86874e`.
 
 ## Evidence
 
@@ -20,7 +29,7 @@ Version: 0.1.4. Date: 2026-10-30.
 The manual trial is user-reported acceptance, not a controlled acoustic benchmark.
 It does not establish a physical key-to-silence latency bound.
 
-The released helper SHA-256 is:
+The baseline 0.1.4 helper SHA-256 is:
 
 ```text
 cbf3187e7b2357aac2692ec62398a6c42c967767301444afe3c1202a67fdde61

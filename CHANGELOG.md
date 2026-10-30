@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.5
+
+- Shorten the README and npm description around automatic background muting during voice recording, with familiar voice-input tools as feature comparisons.
+- Move advanced setup and recovery details out of the product introduction.
+- Keep the 0.1.4 muting implementation unchanged; publish a new package version rather than replace the existing GitHub release.
+
 ## 0.1.4
 
 First public release, based on the locally tested 0.1.4 runtime.

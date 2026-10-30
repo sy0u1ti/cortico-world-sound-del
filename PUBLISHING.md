@@ -26,7 +26,7 @@ PR that edits the generated catalog does not publish an extension.
 
 ```powershell
 npm login --auth-type=web --registry=https://registry.npmjs.org --browser=false
-npm publish release-artifacts/cortico-world-sound-del-0.1.4.tgz --access public --registry=https://registry.npmjs.org
+npm publish release-artifacts/cortico-world-sound-del-0.1.5.tgz --access public --registry=https://registry.npmjs.org
 npm view cortico-world-sound-del version --registry=https://registry.npmjs.org
 gh issue create --repo Pal-AI-Lab/cortico-extensions --title "[sync] cortico-world-sound-del" --body "package: cortico-world-sound-del"
 ```
