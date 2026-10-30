@@ -16,6 +16,12 @@ test('the real Cortico API 6 manifest validator accepts the package', () => {
   assert.deepEqual(manifest.cpu, ['x64']);
 });
 
+test('the default marketplace summary uses the Chinese locale copy', () => {
+  const manifest = JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf8'));
+  assert.equal(manifest.description, manifest.cortico.locales.zh.description);
+  assert.match(manifest.description, /[\u4e00-\u9fff]/);
+});
+
 test('the real Cortico dry mount validates configuration and declarations without starting audio', async () => {
   const directory = scratch('contract-');
   const report = await dryMountWorld(definition, { scratchDir: directory, packageDir: ROOT });

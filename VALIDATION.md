@@ -11,6 +11,12 @@ typecheck, Clippy and the same upstream extension checker again before
 publication. Its rebuilt helper SHA-256 is
 `4ffe5f30316a3acb4e33096ac31d18c22b4bca9c161480ccf1aa3ca25d86874e`.
 
+Version 0.1.6 changes the default package description to Chinese and adds a
+metadata regression test; runtime sources remain unchanged. Its build passed
+55 Rust tests, 72 TypeScript/contract/process tests, typecheck, Clippy and the
+same upstream extension checker. The rebuilt helper SHA-256 is
+`5730ace500a63ff6a878e504695dba979e71ad458c38faf450ee79fdbc277fbf`.
+
 ## Evidence
 
 | Check | Result |

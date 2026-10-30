@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.6
+
+- Use the Chinese introduction as the default npm and marketplace description, including clients that do not select a localized description.
+- Add a regression check that keeps the default description aligned with the Chinese locale.
+- Keep the TypeScript and Rust runtime sources unchanged.
+
 ## 0.1.5
 
 - Shorten the README and npm description around automatic background muting during voice recording, with familiar voice-input tools as feature comparisons.

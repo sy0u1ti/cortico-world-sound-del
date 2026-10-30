@@ -1,8 +1,8 @@
 {
   "name": "cortico-world-sound-del",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "type": "module",
-  "description": "Give Coopanion mute-while-speaking like WeChat Input and 网易兔八哥: automatically mute background playback during voice recording, then restore it. Windows x64; requires the built-in voice module.",
+  "description": "为 Coopanion 加上类似微信输入法、网易兔八哥的收音静音体验：按下原收音快捷键，后台播放自动静音，结束后恢复，不用手动暂停音乐或视频。无需修改主程序；适用于 Windows x64，依赖内置语音模块。",
   "license": "MIT",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",

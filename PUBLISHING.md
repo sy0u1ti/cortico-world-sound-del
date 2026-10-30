@@ -26,7 +26,14 @@ PR that edits the generated catalog does not publish an extension.
 
 ```powershell
 npm login --auth-type=web --registry=https://registry.npmjs.org --browser=false
-npm publish release-artifacts/cortico-world-sound-del-0.1.5.tgz --access public --registry=https://registry.npmjs.org
+npm stage publish release-artifacts/0.1.6/cortico-world-sound-del-0.1.6.tgz --ignore-scripts --access public --tag latest --registry=https://registry.npmjs.org
+```
+
+Use an npm CLI that supports staged publishing. Approve the uploaded version
+under npmjs.com **Staged Packages**, then verify the public version before
+requesting a marketplace sync. A staged tarball is not a published release.
+
+```powershell
 npm view cortico-world-sound-del version --registry=https://registry.npmjs.org
 gh issue create --repo Pal-AI-Lab/cortico-extensions --title "[sync] cortico-world-sound-del" --body "package: cortico-world-sound-del"
 ```
